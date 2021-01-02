@@ -1,8 +1,25 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">You alright mate?</text>
+    <button v-bind:onPress="handleBtnClickCount" :title="btnTitle" />
+    <text class="text-container">{{ btnClickCount }}</text>
   </view>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      btnTitle: "Click Me",
+      btnClickCount: 0,
+    };
+  },
+  methods: {
+    handleBtnClickCount: function () {
+      this.btnClickCount = this.btnClickCount + 1;
+    },
+  },
+};
+</script>
 
 <style>
 .container {
@@ -11,7 +28,9 @@
   justify-content: center;
   flex: 1;
 }
-.text-color-primary {
+.text-container {
   color: blue;
+  padding: 2;
+  font-size: 20;
 }
 </style>
