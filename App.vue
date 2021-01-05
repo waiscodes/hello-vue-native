@@ -2,11 +2,16 @@
   <view class="container">
     <button v-bind:onPress="handleBtnClickCount" :title="btnTitle" />
     <text class="text-container">{{ btnClickCount }}</text>
+    <Random />
   </view>
 </template>
 
 <script>
+import Random from "./components/Random.vue";
 export default {
+  components: {
+    Random,
+  },
   data: function () {
     return {
       btnTitle: "Click Me",
